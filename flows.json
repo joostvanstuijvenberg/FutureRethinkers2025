@@ -1,0 +1,560 @@
+[
+    {
+        "id": "a4e0d25970561d9f",
+        "type": "tab",
+        "label": "SEnDlab P1 monitor",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "94f6373df69d5298",
+        "type": "mqtt-broker",
+        "name": "SEnDlab playground MQTT server",
+        "broker": "mqtt.sendlab.nl",
+        "port": "11883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f7af309c4a4c0d96",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "96f97abc55337584",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "a172139b7e82f991",
+        "type": "ui_group",
+        "name": "Electricity",
+        "tab": "f7af309c4a4c0d96",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0159a34b6b499611",
+        "type": "global-config",
+        "name": "global-config",
+        "env": []
+    },
+    {
+        "id": "4f0cd9fb49a0699d",
+        "type": "ui_group",
+        "name": "Gas",
+        "tab": "f7af309c4a4c0d96",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6e2915071b9fdcff",
+        "type": "mqtt in",
+        "z": "a4e0d25970561d9f",
+        "name": "",
+        "topic": "smartmeter/raw",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "94f6373df69d5298",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "126db262b72a2b6c",
+                "e3e590f4b6245d86"
+            ]
+        ]
+    },
+    {
+        "id": "126db262b72a2b6c",
+        "type": "debug",
+        "z": "a4e0d25970561d9f",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "e3e590f4b6245d86",
+        "type": "switch",
+        "z": "a4e0d25970561d9f",
+        "name": "Select my own meter",
+        "property": "payload.datagram.signature",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "D22C51-16405E",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "3062a3edb8f649c5",
+                "fb777a822d2152ed"
+            ]
+        ],
+        "info": "Place the last 12 characters of your own smart meter's signature here."
+    },
+    {
+        "id": "3062a3edb8f649c5",
+        "type": "debug",
+        "z": "a4e0d25970561d9f",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "fb777a822d2152ed",
+        "type": "function",
+        "z": "a4e0d25970561d9f",
+        "name": "Decode DSMR fields",
+        "func": "// 1-0:1.8.1 - meter reading electricity delivered to client(tariff 1) in 0,001 kWh\n// 1-0:1.8.2 - meter reading electricity delivered to client(tariff 2) in 0,001 kWh\nvar line_1_8_1 = msg.payload.datagram.p1.match(/1-0:1.8.1\\(0*([0-9]*\\.[0-9]*)\\*kWh\\)/);\nvar energy_consumed_tariff_1 = parseFloat(line_1_8_1[1]);\nvar line_1_8_2 = msg.payload.datagram.p1.match(/1-0:1.8.2\\(0*([0-9]*\\.[0-9]*)\\*kWh\\)/);\nvar energy_consumed_tariff_2 = parseFloat(line_1_8_2[1]);\nvar energy_consumed_total = energy_consumed_tariff_1 + energy_consumed_tariff_2;\n\n// 1-0:2.8.1 - Meter Reading electricity delivered by client(Tariff 1) in 0, 001 kWh\n// 1-0:2.8.2 - Meter Reading electricity delivered by client(Tariff 2) in 0, 001 kWh\nvar line_2_8_1 = msg.payload.datagram.p1.match(/1-0:2.8.1\\(0*([0-9]*\\.[0-9]*)\\*kWh\\)/);\nvar energy_produced_tariff_1 = parseFloat(line_2_8_1[1]);\nvar line_2_8_2 = msg.payload.datagram.p1.match(/1-0:2.8.2\\(0*([0-9]*\\.[0-9]*)\\*kWh\\)/);\nvar energy_produced_tariff_2 = parseFloat(line_2_8_2[1]);\nvar energy_produced_total = energy_produced_tariff_1 + energy_produced_tariff_2;\n\n// 1-0:1.7.0.255 - Actual electricity power delivered (+P) in 1 watt resolution\n// 1-0:2.7.0.255 - Actual electricity power received (-P) in 1 watt resolution\nvar line_1_7_0 = msg.payload.datagram.p1.match(/1-0:1.7.0\\(0*([0-9]*\\.[0-9]*)\\*kW\\)/);\nvar power_currently_consumed = parseFloat(line_1_7_0[1] * 1000);\nvar line_2_7_0 = msg.payload.datagram.p1.match(/1-0:2.7.0\\(0*([0-9]*\\.[0-9]*)\\*kW\\)/);\nvar power_currently_produced = parseFloat(line_2_7_0[1] * 1000);\n\n// 0-1:24.2.1 - last hourly value gas delivered to client\nvar line_gas_delivered = msg.payload.datagram.p1.match(/0-1:24.2.1\\(([0-9]*[A-Z])\\)\\(([0-9]*\\.[0-9]*)\\*(m3)\\)/);\nvar gas_consumed = parseFloat(line_gas_delivered[2]);\n\nmsg.payload.dsmr = {\n    electricity: {\n        // energy_consumed_tariff_1: energy_consumed_tariff_1,\n        // energy_consumed_tariff_2: energy_consumed_tariff_2,\n        energy_consumed_total: energy_consumed_total,\n        // energy_produced_tariff_1: energy_produced_tariff_1,\n        // energy_produced_tariff_2: energy_produced_tariff_2,\n        energy_produced_total: energy_produced_total,\n        power_currently_consumed: parseFloat(line_1_7_0[1] * 1000),\n        power_currently_produced: parseFloat(line_2_7_0[1] * 1000),\n    },\n    gas: {\n        consumed: gas_consumed,\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "347be76a27c14976",
+                "37957b17a5abe98c",
+                "662e12061cef6ae3",
+                "80428849086a50a9",
+                "6cd91ba22ff17f62",
+                "07026392c151e034"
+            ]
+        ]
+    },
+    {
+        "id": "347be76a27c14976",
+        "type": "debug",
+        "z": "a4e0d25970561d9f",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "55f56d853b2a6a16",
+        "type": "comment",
+        "z": "a4e0d25970561d9f",
+        "name": "Place the last 12 characters of your own smart meter kit's signature here.",
+        "info": "",
+        "x": 320,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "37957b17a5abe98c",
+        "type": "change",
+        "z": "a4e0d25970561d9f",
+        "name": "Keep only total energy consumed",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.dsmr.electricity.energy_consumed_total",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 460,
+        "wires": [
+            [
+                "57d9b133bdf09402"
+            ]
+        ]
+    },
+    {
+        "id": "57d9b133bdf09402",
+        "type": "ui_gauge",
+        "z": "a4e0d25970561d9f",
+        "name": "",
+        "group": "a172139b7e82f991",
+        "order": 0,
+        "width": "5",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Total energy consumed",
+        "label": "kWh",
+        "format": "{{value | number:3}}",
+        "min": "5000",
+        "max": "7000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "5800",
+        "seg2": "6200",
+        "diff": false,
+        "className": "",
+        "x": 810,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "662e12061cef6ae3",
+        "type": "change",
+        "z": "a4e0d25970561d9f",
+        "name": "Keep only total energy produced",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.dsmr.electricity.energy_produced_total",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 500,
+        "wires": [
+            [
+                "62de7d25b57e081d"
+            ]
+        ]
+    },
+    {
+        "id": "62de7d25b57e081d",
+        "type": "ui_gauge",
+        "z": "a4e0d25970561d9f",
+        "name": "",
+        "group": "a172139b7e82f991",
+        "order": 1,
+        "width": "5",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Total energy produced",
+        "label": "kWh",
+        "format": "{{value | number:3}}",
+        "min": "1400",
+        "max": "4000",
+        "colors": [
+            "#b21711",
+            "#e6e600",
+            "#02ba07"
+        ],
+        "seg1": "1500",
+        "seg2": "2500",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "80428849086a50a9",
+        "type": "change",
+        "z": "a4e0d25970561d9f",
+        "name": "Keep only power currently consumed",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.dsmr.electricity.power_currently_consumed",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 540,
+        "wires": [
+            [
+                "a707500b5e683d86"
+            ]
+        ]
+    },
+    {
+        "id": "a707500b5e683d86",
+        "type": "ui_text",
+        "z": "a4e0d25970561d9f",
+        "group": "a172139b7e82f991",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Power currently consumed",
+        "format": "{{msg.payload}} W",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 820,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "6cd91ba22ff17f62",
+        "type": "change",
+        "z": "a4e0d25970561d9f",
+        "name": "Keep only power currently produced",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.dsmr.electricity.power_currently_produced",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 580,
+        "wires": [
+            [
+                "1fe6e1f51a6682c1"
+            ]
+        ]
+    },
+    {
+        "id": "1fe6e1f51a6682c1",
+        "type": "ui_text",
+        "z": "a4e0d25970561d9f",
+        "group": "a172139b7e82f991",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Power currently produced",
+        "format": "{{msg.payload}} W",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 810,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "07026392c151e034",
+        "type": "change",
+        "z": "a4e0d25970561d9f",
+        "name": "Keep only gas consumed",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.dsmr.gas.consumed",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 620,
+        "wires": [
+            [
+                "b51a295b50148b92"
+            ]
+        ]
+    },
+    {
+        "id": "b51a295b50148b92",
+        "type": "ui_text",
+        "z": "a4e0d25970561d9f",
+        "group": "4f0cd9fb49a0699d",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Gas consumed",
+        "format": "{{msg.payload}} m3",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 780,
+        "y": 620,
+        "wires": []
+    }
+]
